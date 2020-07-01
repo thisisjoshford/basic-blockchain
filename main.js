@@ -28,4 +28,8 @@ class Blockchain{
     createGenesisBlock(){
       return new Block(0, "06/30/2020", "Genesis Block", "0");
   }
+
+    getLatestBlock(){
+      return this.chain[this.chain.length - 1]
+    }
 }
