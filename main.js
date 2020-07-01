@@ -12,12 +12,20 @@ class Block{
 
   calculateHash(){
     return SHA256(
-      this.index 
-      + this.prevHash 
-      + this.timestamp 
-      + JSON.stringify(this.data)
+      this.index +
+      this.prevHash +
+      this.timestamp +
+      JSON.stringify(this.data)
       ).toString();
   }
 }
 
+class Blockchain{
+  constructor(){
+    this.chain = [this.createGenesisBlock()];
+  }
 
+    createGenesisBlock(){
+      return new Block(0, "06/30/2020", "Genesis Block", "0");
+  }
+}
